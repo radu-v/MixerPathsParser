@@ -2,19 +2,9 @@
 
 namespace MixerPathsParser
 {
-   public struct MixerPath
+   public record MixerPath(string Name)
    {
-      public readonly string Name;
-
-      public IList<MixerControl> MixerControls;
-      public IList<MixerPath> MixerPaths;
-
-      public MixerPath(string name)
-      {
-         Name = name;
-
-         MixerControls = new List<MixerControl>();
-         MixerPaths = new List<MixerPath>();
-      }
+      public IList<MixerControl> MixerControls = new List<MixerControl>();
+      public IList<MixerPath> MixerPaths = new List<MixerPath>();
    }
 }
